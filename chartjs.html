@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Implementando o ChartJS</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+    <div>
+        <canvas id="myChart"></canvas>
+      </div>
+    
+</body>
+</html>
+
+<script>
+
+const ctx = document.getElementById('myChart');
+
+new Chart(ctx, {
+  type: 'line',
+  data: {
+    labels: ['00:00h', '6:00h', '7:00h', '8:00h', '9:00h', '10:00h'],
+    datasets: [{
+      label: 'Fluxo do refeitório',
+      data: [12, 19, 3, 5, 2, 3],
+      borderWidth: 10
+    },
+    {
+      label: 'Fluxo do banheiro',
+      data: [13, 12, 15, 5, 9, 3],
+      borderWidth: 10
+    },{
+      label: 'Fluxo de entrada',
+      data: [32, 39, 23, 25, 22, 23],
+      borderWidth: 10
+    }
+    ]
+  },
+  options: {
+    scales: {
+      y: {
+        beginAtZero: true
+      }
+    }
+  }
+});
+
+</script>
